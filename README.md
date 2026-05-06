@@ -6,7 +6,7 @@
 
 ## 📋 Table of Contents
 
-- [Live Demo](#live-demo)
+- [Live Demo](http://ecommerce-project-react-env.eba-qpkqcbgg.ap-southeast-1.elasticbeanstalk.com/)
 - [Overview]
 - [Tech Stack]
 - [Project Structure]
