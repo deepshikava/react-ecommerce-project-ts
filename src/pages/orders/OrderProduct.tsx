@@ -2,8 +2,35 @@ import dayjs from "dayjs";
 import axios from "axios";
 import { Link } from "react-router";
 import BuyAgainIcon from "../../assets/images/icons/buy-again.png";
+import type { OrderType } from "../../types/order";
+import type { LoadCartType } from "../../types/cart";
 
-export function OrderProduct({ order, orderProduct, loadCart }) {
+type OrderProductProps = {
+  order: OrderType;
+  orderProduct: {
+    productId: "string";
+    quantity: number;
+    estimatedDeliveryTimeMs: number;
+    product: {
+      id: string;
+      image: string;
+      name: string;
+      rating: {
+        stars: number;
+        count: number;
+      };
+      priceCents: number;
+      keywords: string[];
+    };
+  };
+  loadCart: LoadCartType;
+};
+
+export function OrderProduct({
+  order,
+  orderProduct,
+  loadCart,
+}: OrderProductProps) {
   const addToCart = async () => {
     await axios.post("/api/cart-items", {
       productId: orderProduct.product.id,

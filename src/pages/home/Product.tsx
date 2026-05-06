@@ -1,9 +1,16 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import { formatMoney } from "../../utils/money";
 import CheckmarkIcon from "../../assets/images/icons/checkmark.png";
+import type { ProductType } from "../../types/product";
+import type { LoadCartType } from "../../types/cart";
 
-export function Product({ product, loadCart }) {
+type ProductProps = {
+  product: ProductType;
+  loadCart: LoadCartType;
+};
+
+export function Product({ product, loadCart }: ProductProps) {
   const [quantity, setQuantity] = useState(1);
   const [addedToCart, setAddedToCart] = useState(false);
 
@@ -19,7 +26,7 @@ export function Product({ product, loadCart }) {
     }, 2000);
   };
 
-  const selectQuantity = (event) => {
+  const selectQuantity = (event: ChangeEvent<HTMLSelectElement>) => {
     const quantitySelected = Number(event.target.value);
     setQuantity(quantitySelected);
   };

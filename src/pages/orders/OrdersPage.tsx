@@ -4,8 +4,14 @@ import Header from "../../components/Header";
 
 import "./OrdersPage.css";
 import { OrdersGrid } from "./OrdersGrid";
+import type { CartType, LoadCartType } from "../../types/cart";
 
-const OrdersPage = ({ cart, loadCart }) => {
+type OrdersPageProps = {
+  cart: CartType;
+  loadCart: LoadCartType;
+};
+
+const OrdersPage = ({ cart, loadCart }: OrdersPageProps) => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {

@@ -1,8 +1,20 @@
 import dayjs from "dayjs";
 import axios from "axios";
 import { formatMoney } from "../../utils/money";
+import type { CartItemType, LoadCartType } from "../../types/cart";
+import type { DeliveryOptionsType } from "../../types/deliveryOptions";
 
-export function DeliveryOptions({ deliveryOptions, cartItem, loadCart }) {
+type DeliveryOptionsProps = {
+  deliveryOptions: DeliveryOptionsType;
+  cartItem: CartItemType;
+  loadCart: LoadCartType;
+};
+
+export function DeliveryOptions({
+  deliveryOptions,
+  cartItem,
+  loadCart,
+}: DeliveryOptionsProps) {
   return (
     <div className="delivery-options">
       <div className="delivery-options-title">Choose a delivery option:</div>
@@ -36,7 +48,7 @@ export function DeliveryOptions({ deliveryOptions, cartItem, loadCart }) {
             <div>
               <div className="delivery-option-date">
                 {dayjs(deliveryOption.estimatedDeliveryTimeMs).format(
-                  "dddd, MMMM D"
+                  "dddd, MMMM D",
                 )}
               </div>
               <div className="delivery-option-price">{priceString}</div>

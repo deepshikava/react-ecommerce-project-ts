@@ -4,8 +4,14 @@ import Header from "../../components/Header";
 import "./HomePage.css";
 import { ProductsGrid } from "./ProductsGrid";
 import { useSearchParams } from "react-router";
+import type { CartType, LoadCartType } from "../../types/cart";
 
-function HomaPage({ cart, loadCart }) {
+type HomePageProps = {
+  cart: CartType;
+  loadCart: LoadCartType;
+};
+
+function HomePage({ cart, loadCart }: HomePageProps) {
   const [products, setProducts] = useState([]);
   const [searchParams] = useSearchParams();
   const search = searchParams.get("search");
@@ -35,4 +41,4 @@ function HomaPage({ cart, loadCart }) {
   );
 }
 
-export default HomaPage;
+export default HomePage;

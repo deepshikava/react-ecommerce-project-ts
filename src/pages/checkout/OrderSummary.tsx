@@ -1,8 +1,20 @@
 import { DeliveryOptions } from "./DeliveryOptions";
 import { CartItemDetails } from "./CartItemDetails";
 import { DeliveryDate } from "./DeliveryDate";
+import type { CartType, LoadCartType } from "../../types/cart";
+import type { DeliveryOptionsType } from "../../types/deliveryOptions";
 
-export function OrderSummary({ cart, deliveryOptions, loadCart }) {
+type OrderSummaryProps = {
+  cart: CartType;
+  deliveryOptions: DeliveryOptionsType;
+  loadCart: LoadCartType;
+};
+
+export function OrderSummary({
+  cart,
+  deliveryOptions,
+  loadCart,
+}: OrderSummaryProps) {
   return (
     <div className="order-summary">
       {deliveryOptions.length > 0 &&

@@ -4,8 +4,13 @@ import Logo from "../../assets/images/logo.png";
 import MobileLogo from "../../assets/images/mobile-logo.png";
 import "./CheckoutHeader.css";
 import { calculateCartTotalQuantity } from "../../utils/totalQuantity";
+import type { CartType } from "../../types/cart";
 
-const CheckoutHeader = ({ cart }) => {
+type CheckoutHeaderProps = {
+  cart: CartType;
+};
+
+const CheckoutHeader = ({ cart }: CheckoutHeaderProps) => {
   return (
     <>
       <div className="checkout-header">

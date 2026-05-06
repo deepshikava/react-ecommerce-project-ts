@@ -1,18 +1,15 @@
 import { NavLink, useNavigate, useSearchParams } from "react-router";
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import CartIcon from "../assets/images/icons/cart-icon.png";
 import SearchIcon from "../assets/images/icons/search-icon.png";
 import LogoWhite from "../assets/images/logo-white.png";
 import MobileLogoWhite from "../assets/images/mobile-logo-white.png";
 import "./Header.css";
 import { calculateCartTotalQuantity } from "../utils/totalQuantity";
+import type { CartType } from "../types/cart";
 
 type HeaderProps = {
-  cart: {
-    productId: string;
-    quantity: number;
-    deliveryOptionId: string;
-  }[];
+  cart: CartType;
 };
 
 function Header({ cart }: HeaderProps) {
@@ -21,7 +18,7 @@ function Header({ cart }: HeaderProps) {
   const searchText = searchParams.get("search");
   const [search, setSearch] = useState(searchText || "");
 
-  const updateSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const updateSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
 
