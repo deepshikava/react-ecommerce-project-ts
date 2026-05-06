@@ -6,18 +6,16 @@
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
 - [Live Demo](#live-demo)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Component Tree](#component-tree)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Available Scripts](#available-scripts)
-- [Configuration](#configuration)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
+- [Overview]
+- [Tech Stack]
+- [Project Structure]
+- [Component Tree]
+- [Features]
+- [Getting Started]
+- [Available Scripts]
+- [Configuration]
+- [Testing]
 
 ---
 
